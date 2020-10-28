@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXProgressBar?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.validation.RequiredFieldValidator?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<StackPane fx:id="rootPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="573.0" prefWidth="857.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <AnchorPane>
+            <children>
+                <Pane id="imagePane" fx:id="imagePane" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #664433;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+            </children>
+        </AnchorPane>
+        <VBox fx:id="signCredsPane" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="460.0" style="-fx-background-color: rgba(255,255,255,1); -fx-background-radius: 10;">
+            <children>
+                <Text fill="#1a1816" lineSpacing="2.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 3em;" text="xxx帐户登录" textAlignment="CENTER" wrappingWidth="261.34375">
+                    <font>
+                        <Font size="28.0" />
+                    </font>
+                    <VBox.margin>
+                        <Insets />
+                    </VBox.margin>
+                </Text>
+            <JFXProgressBar fx:id="lodingBar" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="3.0" />
+            <GridPane fx:id="enterPane" vgap="10.0" VBox.vgrow="ALWAYS">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                      <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="55.0" prefWidth="340.0">
+                          <children>
+                              <JFXTextField fx:id="userNameTextField" focusColor="#6a9d67" labelFloat="true" layoutX="2.0" layoutY="50.0" prefHeight="66.0" prefWidth="350.0" promptText="用户名" style="-fx-text-fill: #3F3A36; -fx-prompt-text-fill: #70665e; -fx-font-size: 2em;" styleClass="login-text" unFocusColor="#70665e" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="50.0">
+                                  <validators>
+                                      <RequiredFieldValidator message="Input Required!">
+                                    <!--                           <FontIcon iconLiteral="fas-exclamation-triangle"/>-->
+                                </RequiredFieldValidator>
+                                  </validators>
+                                  <font>
+                                      <Font name="System Bold" size="20.0" />
+                                  </font>
+                              </JFXTextField>
+                              <FontAwesomeIconView id="login-glyph-icon" fill="#3f3a36" glyphName="USER" layoutX="325.0" layoutY="92.0" size="26" text="" AnchorPane.rightAnchor="4.571428298950195" />
+                          </children>
+                      </AnchorPane>
+                      <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="55.0" prefWidth="340.0" GridPane.rowIndex="1">
+                          <children>
+                              <JFXPasswordField fx:id="passWordTextField" focusColor="#6a9d67" labelFloat="true" layoutY="56.0" prefHeight="66.0" prefWidth="350.0" promptText="密码" style="-fx-prompt-text-fill: #70665e; -fx-text-fill: #3F3A36; -fx-font-size: 2em;" styleClass="login-text" unFocusColor="#70665e" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="56.0">
+                                  <font>
+                                      <Font size="20.0" />
+                                  </font>
+                                  <validators>
+                                      <RequiredFieldValidator message="Input Required!">
+                                    <!--                           <FontIcon iconLiteral="fas-exclamation-triangle"/>-->
+                                </RequiredFieldValidator>
+                                  </validators>
+                              </JFXPasswordField>
+                              <FontAwesomeIconView id="login-glyph-icon" fill="#3f3a36" glyphName="UNLOCK_ALT" layoutX="326.0" layoutY="96.0" size="30" AnchorPane.rightAnchor="4.714284896850586" />
+                          </children>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                      </AnchorPane>
+                  <VBox alignment="CENTER" spacing="10.0" GridPane.rowIndex="2">
+                     <children>
+                        <Label fx:id="errorLabel" style="-fx-font-size: 1.2em;" textFill="#c54a39" />
+                            <JFXButton fx:id="loginBut" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="48.0" prefWidth="355.0" style="-fx-background-color: #6A9D67; -fx-background-radius: 7; -fx-font-size: 14pt; -fx-font-weight: BOLD;" text="登录" textFill="WHITE">
+                        </JFXButton>
+                     </children>
+                  </VBox>
+               </children>
+            </GridPane>
+                <Text fill="#3f3a36" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 12px;" text="©中国xxx∙xxx" textAlignment="CENTER" />
+            </children>
+            <StackPane.margin>
+                <Insets />
+            </StackPane.margin>
+            <padding>
+                <Insets bottom="20.0" left="30.0" right="30.0" top="30.0" />
+            </padding>
+            <effect>
+                <DropShadow color="#0000009f" height="163.93" radius="79.945" width="157.85" />
+            </effect>
+        </VBox>
+    </children>
+</StackPane>

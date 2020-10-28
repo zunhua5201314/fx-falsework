@@ -1,0 +1,46 @@
+.my-chart-symbol0 {
+    -fx-stroke: CHART_COLOR_1, white;
+}
+
+.my-chart-symbol1 {
+    -fx-stroke: CHART_COLOR_2, white;
+}
+
+.my-chart-symbol2 {
+    -fx-stroke: CHART_COLOR_3, white;
+}
+
+.my-chart-symbol3 {
+    -fx-stroke: CHART_COLOR_4, white;
+}
+
+.my-chart-symbol4 {
+    -fx-stroke: CHART_COLOR_5, white;
+}
+
+.my-chart-symbol5 {
+    -fx-stroke: CHART_COLOR_6, white;
+}
+
+.my-chart-symbol6 {
+    -fx-stroke: CHART_COLOR_7, white;
+}
+
+.my-chart-symbol7 {
+    -fx-stroke: CHART_COLOR_8, white;
+}
+
+.my-chart-symbol {
+    -fx-stroke-width: 10;
+    -fx-background-size: 10;
+}
+
+.series0 {
+    -fx-background-color: #57b757;
+}
+
+
+.default-color{
+    -fx-stroke:#9a42c8;
+    -fx-background-color: #9a42c8;
+}

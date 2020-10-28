@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXSpinner?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Pagination?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<StackPane fx:id="root" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <VBox fx:id="centPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="10.0">
+            <children>
+                <HBox alignment="CENTER_RIGHT" maxHeight="-Infinity" prefHeight="45.0" prefWidth="200.0" spacing="10.0">
+                    <children>
+                        <JFXTextField fx:id="searchField" promptText="用户名或账户" />
+                        <JFXButton fx:id="searchBut" buttonType="RAISED" text="搜索" />
+                        <JFXButton fx:id="addBut" buttonType="RAISED" text="添加" />
+                    </children>
+                </HBox>
+                <AnchorPane VBox.vgrow="ALWAYS">
+                    <children>
+                        <Pagination fx:id="pagination" cache="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                        <TableView fx:id="tableView" tableMenuButtonVisible="false" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                            <columnResizePolicy>
+                                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                            </columnResizePolicy>
+                            <columns>
+                                <TableColumn fx:id="serialNumberColumn" maxWidth="50.0" minWidth="50.0" prefWidth="50.0" text="序号" />
+                                <TableColumn fx:id="nameColumn" text="姓名" />
+                                <TableColumn fx:id="accountColumn" text="帐户" />
+                                <TableColumn fx:id="remarksColumn" text="备注" />
+                                <TableColumn fx:id="lastUpdateTimeColumn" text="最后更新时间" />
+                                <TableColumn fx:id="lastUpdatedByColumn" text="最后更新人" />
+                                <TableColumn fx:id="operateColumn" maxWidth="120.0" minWidth="120.0" prefWidth="120" text="操作" />
+
+                            </columns>
+                        </TableView>
+                    </children>
+                </AnchorPane>
+            </children>
+        </VBox>
+        <StackPane fx:id="spinnerPane" visible="false">
+            <JFXSpinner startingAngle="-40" styleClass="materialDesign-purple, first-spinner" />
+            <JFXSpinner startingAngle="-90" styleClass="materialDesign-blue, second-spinner" />
+            <JFXSpinner startingAngle="-120" styleClass="materialDesign-cyan, third-spinner" />
+            <JFXSpinner startingAngle="-150" styleClass="materialDesign-green, fourth-spinner" />
+            <JFXSpinner startingAngle="-180" styleClass="materialDesign-yellow, fifth-spinner" />
+            <JFXSpinner startingAngle="-210" styleClass="materialDesign-orange, sixth-spinner" />
+            <JFXSpinner startingAngle="-240" styleClass="materialDesign-red, seventh-spinner" />
+        </StackPane>
+    </children>
+
+</StackPane>

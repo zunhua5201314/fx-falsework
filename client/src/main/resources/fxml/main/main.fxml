@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXDrawer?>
+<?import com.jfoenix.controls.JFXDrawersStack?>
+<?import com.jfoenix.controls.JFXHamburger?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import com.jfoenix.controls.JFXRippler?>
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import com.jfoenix.controls.JFXToolbar?>
+<?import com.jfoenix.transitions.hamburger.HamburgerSlideCloseTransition?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<StackPane fx:id="rootPane" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+
+        <Pane fx:id="backgroundPicturePane" prefHeight="200.0" prefWidth="200.0" styleClass="backgroundPicturePane">
+            <StackPane.margin>
+                <Insets />
+            </StackPane.margin>
+        </Pane>
+        <Pane fx:id="backgroundPane" prefHeight="200.0" prefWidth="200.0" styleClass="backgroundPane">
+            <StackPane.margin>
+                <Insets />
+            </StackPane.margin>
+        </Pane>
+
+        <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="400.0" prefWidth="600.0">
+            <children>
+
+                <JFXToolbar fx:id="toolBar" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="45.0" styleClass="app-tool-bar" VBox.vgrow="ALWAYS">
+                    <leftItems>
+                        <HBox alignment="CENTER_LEFT">
+                            <JFXRippler maskType="CIRCLE" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="40.0">
+                                <control>
+                                    <StackPane fx:id="titleBurgerContainer">
+                                        <children>
+                                            <JFXHamburger fx:id="navigationButton">
+                                                <animation>
+                                                    <HamburgerSlideCloseTransition />
+                                                </animation>
+                                                <padding>
+                                                    <Insets left="5.0" />
+                                                </padding>
+                                            </JFXHamburger>
+                                        </children>
+                                    </StackPane>
+                                </control>
+                            </JFXRippler>
+                            <JFXButton fx:id="homeButton" contentDisplay="GRAPHIC_ONLY" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="40.0" styleClass="tool-bar-button" />
+                            <JFXButton fx:id="refreshButton" contentDisplay="GRAPHIC_ONLY" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="40.0" styleClass="tool-bar-button" />
+                            <JFXDatePicker fx:id="datePicker" editable="false" maxWidth="150">
+                                <HBox.margin>
+                                    <Insets />
+                                </HBox.margin>
+                                <padding>
+                                    <Insets bottom="7.0" />
+                                </padding>
+                            </JFXDatePicker>
+                        </HBox>
+
+
+                    </leftItems>
+                    <rightItems>
+
+
+                        <HBox alignment="CENTER">
+                            <JFXButton fx:id="skinButton" contentDisplay="GRAPHIC_ONLY" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="40.0" styleClass="tool-bar-button">
+                            </JFXButton>
+                            <JFXButton fx:id="rolesBut" contentDisplay="GRAPHIC_ONLY" maxHeight="40.0" maxWidth="40.0" minHeight="40.0" minWidth="40.0" prefHeight="40.0" prefWidth="40.0" styleClass="tool-bar-button" text="user" textFill="WHITE" />
+                            <VBox alignment="CENTER">
+                                <Label fx:id="userLabel" maxWidth="1.7976931348623157E308" style="-fx-font-size: 16;-fx-font-weight: bold" text="李稳" VBox.vgrow="ALWAYS" />
+                                <Label fx:id="roleLabel" maxWidth="1.7976931348623157E308" style="-fx-font-size: 10;" text="管理员" VBox.vgrow="ALWAYS" />
+                            </VBox>
+                            <JFXButton fx:id="userButton" contentDisplay="GRAPHIC_ONLY" maxHeight="20.0" maxWidth="20.0" minHeight="20.0" minWidth="20.0" prefHeight="20.0" prefWidth="20.0" styleClass="tool-bar-button" text="user" textFill="WHITE" />
+                            <padding>
+                                <Insets bottom="0" left="0.0" right="10.0" top="0.0" />
+                            </padding>
+                        </HBox>
+
+
+                    </rightItems>
+               <padding>
+                  <Insets left="10.0" right="10.0" />
+               </padding>
+                </JFXToolbar>
+
+                <JFXDrawersStack fx:id="drawersStack" VBox.vgrow="ALWAYS" />
+                <JFXDrawer fx:id="leftDrawer" defaultDrawerSize="240.0" overLayVisible="false" />
+                <JFXTabPane fx:id="tabPane" />
+                <JFXListView fx:id="navigationList" maxWidth="-Infinity" minWidth="240.0" prefWidth="240.0" styleClass="navigation-list" />
+
+            </children>
+        </VBox>
+    </children>
+
+</StackPane>

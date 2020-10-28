@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.*?>
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="356.0"
+      prefWidth="435.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <GridPane alignment="CENTER" vgap="15.0" VBox.vgrow="ALWAYS">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                <RowConstraints/>
+            </rowConstraints>
+            <children>
+                <JFXTextField fx:id="elementCodeTextField" labelFloat="true" promptText="资源编码"/>
+                <JFXComboBox fx:id="elementTypeComboBox" labelFloat="true" maxWidth="1.7976931348623157E308"
+                             promptText="资源类型" GridPane.rowIndex="3"/>
+                <JFXTextField fx:id="elementNameTextField" labelFloat="true" promptText="资源名称" GridPane.rowIndex="1"/>
+                <JFXTextField fx:id="elementUriTextField" labelFloat="true" promptText="资源地址" GridPane.rowIndex="2"/>
+                <JFXComboBox fx:id="elementMethodComBox" labelFloat="true" maxWidth="1.7976931348623157E308"
+                             promptText="资源请求类型" GridPane.rowIndex="4"/>
+                <JFXTextArea fx:id="elementDesTextAre" labelFloat="true" prefWidth="470.0" promptText="描述"
+                             GridPane.rowIndex="5" GridPane.rowSpan="2">
+                    <GridPane.margin>
+                        <Insets top="10.0"/>
+                    </GridPane.margin>
+                </JFXTextArea>
+
+            </children>
+        </GridPane>
+
+    </children>
+</VBox>

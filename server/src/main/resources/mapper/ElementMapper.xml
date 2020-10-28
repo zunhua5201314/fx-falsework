@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.epri.fx.server.mapper.ElementMapper">
+    <resultMap id="BaseResultMap" type="com.epri.fx.server.entity.Element">
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="code" jdbcType="VARCHAR" property="code"/>
+        <result column="type" jdbcType="VARCHAR" property="type"/>
+        <result column="name" jdbcType="VARCHAR" property="name"/>
+        <result column="uri" jdbcType="VARCHAR" property="uri"/>
+        <result column="menu_id" jdbcType="VARCHAR" property="menuId"/>
+        <result column="parent_id" jdbcType="VARCHAR" property="parentId"/>
+        <result column="path" jdbcType="VARCHAR" property="path"/>
+        <result column="method" jdbcType="VARCHAR" property="method"/>
+        <result column="description" jdbcType="VARCHAR" property="description"/>
+        <result column="crt_time" jdbcType="TIMESTAMP" property="crtTime"/>
+        <result column="crt_user" jdbcType="VARCHAR" property="crtUser"/>
+        <result column="crt_name" jdbcType="VARCHAR" property="crtName"/>
+        <result column="crt_host" jdbcType="VARCHAR" property="crtHost"/>
+        <result column="attr1" jdbcType="VARCHAR" property="attr1"/>
+        <result column="attr2" jdbcType="VARCHAR" property="attr2"/>
+        <result column="attr3" jdbcType="VARCHAR" property="attr3"/>
+        <result column="attr4" jdbcType="VARCHAR" property="attr4"/>
+        <result column="attr5" jdbcType="VARCHAR" property="attr5"/>
+        <result column="attr6" jdbcType="VARCHAR" property="attr6"/>
+        <result column="attr7" jdbcType="VARCHAR" property="attr7"/>
+        <result column="attr8" jdbcType="VARCHAR" property="attr8"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+    id, code, type, name, uri, menu_id, parent_id, path, method, description, crt_time, 
+    crt_user, crt_name, crt_host, attr1, attr2, attr3, attr4, attr5, attr6, attr7, attr8
+  </sql>
+    <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from base_element
+        where id = #{id,jdbcType=INTEGER}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from base_element
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+    <insert id="insert" parameterType="com.epri.fx.server.entity.Element">
+    insert into base_element (id, code, type, 
+      name, uri, menu_id, 
+      parent_id, path, method, 
+      description, crt_time, crt_user, 
+      crt_name, crt_host, attr1, 
+      attr2, attr3, attr4, 
+      attr5, attr6, attr7, 
+      attr8)
+    values (#{id,jdbcType=INTEGER}, #{code,jdbcType=VARCHAR}, #{type,jdbcType=VARCHAR}, 
+      #{name,jdbcType=VARCHAR}, #{uri,jdbcType=VARCHAR}, #{menuId,jdbcType=VARCHAR}, 
+      #{parentId,jdbcType=VARCHAR}, #{path,jdbcType=VARCHAR}, #{method,jdbcType=VARCHAR}, 
+      #{description,jdbcType=VARCHAR}, #{crtTime,jdbcType=TIMESTAMP}, #{crtUser,jdbcType=VARCHAR}, 
+      #{crtName,jdbcType=VARCHAR}, #{crtHost,jdbcType=VARCHAR}, #{attr1,jdbcType=VARCHAR}, 
+      #{attr2,jdbcType=VARCHAR}, #{attr3,jdbcType=VARCHAR}, #{attr4,jdbcType=VARCHAR}, 
+      #{attr5,jdbcType=VARCHAR}, #{attr6,jdbcType=VARCHAR}, #{attr7,jdbcType=VARCHAR}, 
+      #{attr8,jdbcType=VARCHAR})
+  </insert>
+    <insert id="insertSelective" parameterType="com.epri.fx.server.entity.Element">
+        insert into base_element
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="code != null">
+                code,
+            </if>
+            <if test="type != null">
+                type,
+            </if>
+            <if test="name != null">
+                name,
+            </if>
+            <if test="uri != null">
+                uri,
+            </if>
+            <if test="menuId != null">
+                menu_id,
+            </if>
+            <if test="parentId != null">
+                parent_id,
+            </if>
+            <if test="path != null">
+                path,
+            </if>
+            <if test="method != null">
+                method,
+            </if>
+            <if test="description != null">
+                description,
+            </if>
+            <if test="crtTime != null">
+                crt_time,
+            </if>
+            <if test="crtUser != null">
+                crt_user,
+            </if>
+            <if test="crtName != null">
+                crt_name,
+            </if>
+            <if test="crtHost != null">
+                crt_host,
+            </if>
+            <if test="attr1 != null">
+                attr1,
+            </if>
+            <if test="attr2 != null">
+                attr2,
+            </if>
+            <if test="attr3 != null">
+                attr3,
+            </if>
+            <if test="attr4 != null">
+                attr4,
+            </if>
+            <if test="attr5 != null">
+                attr5,
+            </if>
+            <if test="attr6 != null">
+                attr6,
+            </if>
+            <if test="attr7 != null">
+                attr7,
+            </if>
+            <if test="attr8 != null">
+                attr8,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=INTEGER},
+            </if>
+            <if test="code != null">
+                #{code,jdbcType=VARCHAR},
+            </if>
+            <if test="type != null">
+                #{type,jdbcType=VARCHAR},
+            </if>
+            <if test="name != null">
+                #{name,jdbcType=VARCHAR},
+            </if>
+            <if test="uri != null">
+                #{uri,jdbcType=VARCHAR},
+            </if>
+            <if test="menuId != null">
+                #{menuId,jdbcType=VARCHAR},
+            </if>
+            <if test="parentId != null">
+                #{parentId,jdbcType=VARCHAR},
+            </if>
+            <if test="path != null">
+                #{path,jdbcType=VARCHAR},
+            </if>
+            <if test="method != null">
+                #{method,jdbcType=VARCHAR},
+            </if>
+            <if test="description != null">
+                #{description,jdbcType=VARCHAR},
+            </if>
+            <if test="crtTime != null">
+                #{crtTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="crtUser != null">
+                #{crtUser,jdbcType=VARCHAR},
+            </if>
+            <if test="crtName != null">
+                #{crtName,jdbcType=VARCHAR},
+            </if>
+            <if test="crtHost != null">
+                #{crtHost,jdbcType=VARCHAR},
+            </if>
+            <if test="attr1 != null">
+                #{attr1,jdbcType=VARCHAR},
+            </if>
+            <if test="attr2 != null">
+                #{attr2,jdbcType=VARCHAR},
+            </if>
+            <if test="attr3 != null">
+                #{attr3,jdbcType=VARCHAR},
+            </if>
+            <if test="attr4 != null">
+                #{attr4,jdbcType=VARCHAR},
+            </if>
+            <if test="attr5 != null">
+                #{attr5,jdbcType=VARCHAR},
+            </if>
+            <if test="attr6 != null">
+                #{attr6,jdbcType=VARCHAR},
+            </if>
+            <if test="attr7 != null">
+                #{attr7,jdbcType=VARCHAR},
+            </if>
+            <if test="attr8 != null">
+                #{attr8,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.epri.fx.server.entity.Element">
+        update base_element
+        <set>
+            <if test="code != null">
+                code = #{code,jdbcType=VARCHAR},
+            </if>
+            <if test="type != null">
+                type = #{type,jdbcType=VARCHAR},
+            </if>
+            <if test="name != null">
+                name = #{name,jdbcType=VARCHAR},
+            </if>
+            <if test="uri != null">
+                uri = #{uri,jdbcType=VARCHAR},
+            </if>
+            <if test="menuId != null">
+                menu_id = #{menuId,jdbcType=VARCHAR},
+            </if>
+            <if test="parentId != null">
+                parent_id = #{parentId,jdbcType=VARCHAR},
+            </if>
+            <if test="path != null">
+                path = #{path,jdbcType=VARCHAR},
+            </if>
+            <if test="method != null">
+                method = #{method,jdbcType=VARCHAR},
+            </if>
+            <if test="description != null">
+                description = #{description,jdbcType=VARCHAR},
+            </if>
+            <if test="crtTime != null">
+                crt_time = #{crtTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="crtUser != null">
+                crt_user = #{crtUser,jdbcType=VARCHAR},
+            </if>
+            <if test="crtName != null">
+                crt_name = #{crtName,jdbcType=VARCHAR},
+            </if>
+            <if test="crtHost != null">
+                crt_host = #{crtHost,jdbcType=VARCHAR},
+            </if>
+            <if test="attr1 != null">
+                attr1 = #{attr1,jdbcType=VARCHAR},
+            </if>
+            <if test="attr2 != null">
+                attr2 = #{attr2,jdbcType=VARCHAR},
+            </if>
+            <if test="attr3 != null">
+                attr3 = #{attr3,jdbcType=VARCHAR},
+            </if>
+            <if test="attr4 != null">
+                attr4 = #{attr4,jdbcType=VARCHAR},
+            </if>
+            <if test="attr5 != null">
+                attr5 = #{attr5,jdbcType=VARCHAR},
+            </if>
+            <if test="attr6 != null">
+                attr6 = #{attr6,jdbcType=VARCHAR},
+            </if>
+            <if test="attr7 != null">
+                attr7 = #{attr7,jdbcType=VARCHAR},
+            </if>
+            <if test="attr8 != null">
+                attr8 = #{attr8,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.epri.fx.server.entity.Element">
+    update base_element
+    set code = #{code,jdbcType=VARCHAR},
+      type = #{type,jdbcType=VARCHAR},
+      name = #{name,jdbcType=VARCHAR},
+      uri = #{uri,jdbcType=VARCHAR},
+      menu_id = #{menuId,jdbcType=VARCHAR},
+      parent_id = #{parentId,jdbcType=VARCHAR},
+      path = #{path,jdbcType=VARCHAR},
+      method = #{method,jdbcType=VARCHAR},
+      description = #{description,jdbcType=VARCHAR},
+      crt_time = #{crtTime,jdbcType=TIMESTAMP},
+      crt_user = #{crtUser,jdbcType=VARCHAR},
+      crt_name = #{crtName,jdbcType=VARCHAR},
+      crt_host = #{crtHost,jdbcType=VARCHAR},
+      attr1 = #{attr1,jdbcType=VARCHAR},
+      attr2 = #{attr2,jdbcType=VARCHAR},
+      attr3 = #{attr3,jdbcType=VARCHAR},
+      attr4 = #{attr4,jdbcType=VARCHAR},
+      attr5 = #{attr5,jdbcType=VARCHAR},
+      attr6 = #{attr6,jdbcType=VARCHAR},
+      attr7 = #{attr7,jdbcType=VARCHAR},
+      attr8 = #{attr8,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+
+    <select id="selectElementList" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from base_element
+        where menu_id = #{menuId,jdbcType=INTEGER}
+    </select>
+    <select id="selectAllElementPermissions" resultMap="BaseResultMap">
+        select distinct t.code,t.type,t.name,t.uri,t.method,m.title as menu_id from base_element t
+        inner join base_menu m
+        on t.menu_id = m.id
+    </select>
+    <select id="selectAuthorityElementByUserId" resultMap="BaseResultMap">
+    select distinct t.code,t.type,t.name,t.uri,t.method,m.title as menu_id from base_resource_authority ra
+        inner join base_element t
+       on ra.resource_id = t.id
+        and ra.authority_id in (
+          select group_id from base_group_member where user_id = #{userId}
+          union select group_id from base_group_leader where user_id = #{userId}
+        )
+        and ra.authority_type = 'group'
+        and ra.resource_type = 'button'
+        inner join base_menu m
+       on t.menu_id = m.id
+  </select>
+    <delete id="deleteByMenuId" parameterType="java.lang.Integer">
+    delete from base_element
+    where menu_id = #{menuId,jdbcType=INTEGER}
+  </delete>
+
+</mapper>

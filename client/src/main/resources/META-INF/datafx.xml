@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<datafx version="8.0">
+          <features>
+              <featureEnum>com.epri.fx.client.gui.uicomponents.feature.UserGroupFeatures</featureEnum>
+
+          </features>
+</datafx>

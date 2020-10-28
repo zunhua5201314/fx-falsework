@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXListView?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<VBox fx:id="userInfoPane" prefHeight="281.0" prefWidth="262.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <VBox alignment="TOP_CENTER" spacing="10.0" VBox.vgrow="ALWAYS">
+            <children>
+                <Label fx:id="imageLabel" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="80.0" prefWidth="80.0" style="-fx-background-radius: 40; -fx-background-color: #ab47bc;" textAlignment="CENTER">
+                    <graphic>
+                        <FontAwesomeIconView fill="WHITE" glyphName="USER" size="65" />
+                    </graphic>
+                </Label>
+                <Label fx:id="userLabel" text="李稳" textFill="#202124">
+                    <font>
+                        <Font name="System Bold" size="16.0" />
+                    </font>
+                </Label>
+                <Label fx:id="roleLabel" text="管理员" textFill="#5f6368">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Label>
+            </children>
+            <padding>
+                <Insets bottom="10.0" />
+            </padding>
+
+        </VBox>
+        <JFXListView fx:id="listView" depth="1" styleClass="user-info-listview">
+            <HBox>
+                <Label fx:id="personalCenterLabel" maxWidth="1.7976931348623157E308" text="个人中心" HBox.hgrow="ALWAYS" />
+                <FontAwesomeIconView fill="#5f6368" glyphName="USER_SECRET" size="20" />
+            </HBox>
+            <HBox>
+                <Label fx:id="dropOutLabel" maxWidth="1.7976931348623157E308" text="退出" HBox.hgrow="ALWAYS" />
+                <FontAwesomeIconView fill="#5f6368" glyphName="SIGN_OUT" size="20" />
+            </HBox>
+
+        </JFXListView>
+    </children>
+    <padding>
+        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+    </padding>
+</VBox>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXProgressBar?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.VBox?>
+
+
+<VBox xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="315.0" prefWidth="342.0" spacing="20.0">
+          <children>
+              <JFXTextField fx:id="codeTextField" labelFloat="true" promptText="编码" />
+              <JFXTextField fx:id="nameTextField" labelFloat="true" promptText="类型名称" />
+              <JFXTextArea fx:id="descriptionTextArea" labelFloat="true" promptText="描述" VBox.vgrow="ALWAYS" />
+          </children>
+          <padding>
+              <Insets bottom="3.0" top="20.0" />
+          </padding>
+      </VBox>
+      <JFXProgressBar fx:id="progressBar" maxWidth="1.7976931348623157E308" />
+   </children>
+</VBox>

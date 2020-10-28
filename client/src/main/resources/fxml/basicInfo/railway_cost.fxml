@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<!--铁路成本-->
+
+<VBox styleClass="card-pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="584.0" prefWidth="658.0" spacing="10.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <GridPane hgap="10.0" vgap="10.0" VBox.vgrow="ALWAYS">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <JFXTextField labelFloat="true" promptText="距离(公里)" />
+                <JFXTextField labelFloat="true" promptText="单位里程投资(元/公里)" GridPane.rowIndex="1" />
+                <JFXTextField labelFloat="true" promptText="年运输量(亿吨)" GridPane.rowIndex="2" />
+                <JFXTextField labelFloat="true" promptText="驱动能耗(kWh/万吨.公里)" GridPane.rowIndex="3" />
+                <JFXTextField labelFloat="true" promptText="原煤发热量(kcal/kg)" GridPane.rowIndex="4" />
+                <JFXTextField labelFloat="true" promptText="送端标煤价(元/吨)" GridPane.rowIndex="5" />
+                <JFXTextField labelFloat="true" promptText="年供电量(亿kWh)" GridPane.rowIndex="6" />
+                <JFXTextField labelFloat="true" promptText="厂用电率(%)" GridPane.rowIndex="7" />
+                <JFXTextField labelFloat="true" promptText="受端装机(万千瓦)" GridPane.rowIndex="8" />
+                <JFXTextField labelFloat="true" promptText="铁路长度(公里)" GridPane.columnIndex="1" />
+                <JFXTextField labelFloat="true" promptText="总投资(亿元)" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <JFXTextField labelFloat="true" promptText="矿口到储煤场损失(%)" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                <JFXTextField labelFloat="true" promptText="电价(元/MWh)" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                <JFXTextField labelFloat="true" promptText="送端原煤价(元/吨)" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                <JFXTextField labelFloat="true" promptText="铁路损失(%)" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                <JFXTextField labelFloat="true" promptText="年供电量(亿kWh)" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                <JFXTextField labelFloat="true" promptText="年利用小时数(h)" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                <JFXTextField labelFloat="true" promptText="text" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+            </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+        </GridPane>
+        <GridPane hgap="10.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <VBox alignment="CENTER" prefHeight="193.0" prefWidth="100.0">
+                    <children>
+                        <Label text="燃料" />
+                        <GridPane vgap="10.0" VBox.vgrow="ALWAYS">
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                            </rowConstraints>
+                            <children>
+                                <JFXTextField labelFloat="true" promptText="投资" />
+                                <JFXTextField labelFloat="true" promptText="运维" GridPane.rowIndex="1" />
+                                <JFXTextField labelFloat="true" promptText="燃料" GridPane.rowIndex="2" />
+                                <JFXTextField labelFloat="true" promptText=" 小计" GridPane.rowIndex="3" />
+                            </children>
+                        </GridPane>
+                    </children>
+                </VBox>
+                <VBox alignment="CENTER" prefHeight="193.0" prefWidth="100.0" GridPane.columnIndex="1">
+                    <children>
+                        <Label text="铁路输煤" />
+                        <GridPane alignment="CENTER" vgap="10.0" VBox.vgrow="ALWAYS">
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                            </rowConstraints>
+                            <children>
+                                <JFXTextField labelFloat="true" promptText="投资" />
+                                <JFXTextField labelFloat="true" promptText="运维" GridPane.rowIndex="1" />
+                                <JFXTextField labelFloat="true" promptText="燃料" GridPane.rowIndex="2" />
+                                <JFXTextField labelFloat="true" promptText=" 小计" GridPane.rowIndex="3" />
+                            </children>
+                        </GridPane>
+                    </children>
+                </VBox>
+                <VBox alignment="CENTER" prefHeight="193.0" prefWidth="100.0" GridPane.columnIndex="2">
+                    <children>
+                        <Label text="燃煤电厂" />
+                        <GridPane vgap="10.0" VBox.vgrow="ALWAYS">
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                            </rowConstraints>
+                            <children>
+                                <JFXTextField labelFloat="true" promptText="投资" />
+                                <JFXTextField labelFloat="true" promptText="运维" GridPane.rowIndex="1" />
+                                <JFXTextField labelFloat="true" promptText="燃料" GridPane.rowIndex="2" />
+                                <JFXTextField labelFloat="true" promptText=" 小计" GridPane.rowIndex="3" />
+                            </children>
+                        </GridPane>
+                    </children>
+                </VBox>
+            </children>
+        </GridPane>
+
+    </children>
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
+</VBox>

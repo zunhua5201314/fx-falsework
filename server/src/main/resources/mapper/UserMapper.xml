@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.epri.fx.server.mapper.UserMapper">
+    <resultMap id="BaseResultMap" type="com.epri.fx.server.entity.User">
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="username" jdbcType="VARCHAR" property="username"/>
+        <result column="password" jdbcType="VARCHAR" property="password"/>
+        <result column="name" jdbcType="VARCHAR" property="name"/>
+        <result column="birthday" jdbcType="VARCHAR" property="birthday"/>
+        <result column="address" jdbcType="VARCHAR" property="address"/>
+        <result column="mobile_phone" jdbcType="VARCHAR" property="mobilePhone"/>
+        <result column="tel_phone" jdbcType="VARCHAR" property="telPhone"/>
+        <result column="email" jdbcType="VARCHAR" property="email"/>
+        <result column="sex" jdbcType="CHAR" property="sex"/>
+        <result column="type" jdbcType="CHAR" property="type"/>
+        <result column="status" jdbcType="CHAR" property="status"/>
+        <result column="description" jdbcType="VARCHAR" property="description"/>
+        <result column="crt_time" jdbcType="TIMESTAMP" property="crtTime"/>
+        <result column="crt_user" jdbcType="VARCHAR" property="crtUser"/>
+        <result column="crt_name" jdbcType="VARCHAR" property="crtName"/>
+        <result column="crt_host" jdbcType="VARCHAR" property="crtHost"/>
+        <result column="upd_time" jdbcType="TIMESTAMP" property="updTime"/>
+        <result column="upd_user" jdbcType="VARCHAR" property="updUser"/>
+        <result column="upd_name" jdbcType="VARCHAR" property="updName"/>
+        <result column="upd_host" jdbcType="VARCHAR" property="updHost"/>
+        <result column="attr1" jdbcType="VARCHAR" property="attr1"/>
+        <result column="attr2" jdbcType="VARCHAR" property="attr2"/>
+        <result column="attr3" jdbcType="VARCHAR" property="attr3"/>
+        <result column="attr4" jdbcType="VARCHAR" property="attr4"/>
+        <result column="attr5" jdbcType="VARCHAR" property="attr5"/>
+        <result column="attr6" jdbcType="VARCHAR" property="attr6"/>
+        <result column="attr7" jdbcType="VARCHAR" property="attr7"/>
+        <result column="attr8" jdbcType="VARCHAR" property="attr8"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+    id, username, password, name, birthday, address, mobile_phone, tel_phone, email, 
+    sex, type, status, description, crt_time, crt_user, crt_name, crt_host, upd_time, 
+    upd_user, upd_name, upd_host, attr1, attr2, attr3, attr4, attr5, attr6, attr7, attr8
+  </sql>
+    <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from base_user
+        where id = #{id,jdbcType=INTEGER}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from base_user
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+    <insert id="insert" parameterType="com.epri.fx.server.entity.User">
+    insert into base_user (id, username, password, 
+      name, birthday, address, 
+      mobile_phone, tel_phone, email, 
+      sex, type, status, description, 
+      crt_time, crt_user, crt_name, 
+      crt_host, upd_time, upd_user, 
+      upd_name, upd_host, attr1, 
+      attr2, attr3, attr4, 
+      attr5, attr6, attr7, 
+      attr8)
+    values (#{id,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
+      #{name,jdbcType=VARCHAR}, #{birthday,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}, 
+      #{mobilePhone,jdbcType=VARCHAR}, #{telPhone,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, 
+      #{sex,jdbcType=CHAR}, #{type,jdbcType=CHAR}, #{status,jdbcType=CHAR}, #{description,jdbcType=VARCHAR}, 
+      #{crtTime,jdbcType=TIMESTAMP}, #{crtUser,jdbcType=VARCHAR}, #{crtName,jdbcType=VARCHAR}, 
+      #{crtHost,jdbcType=VARCHAR}, #{updTime,jdbcType=TIMESTAMP}, #{updUser,jdbcType=VARCHAR}, 
+      #{updName,jdbcType=VARCHAR}, #{updHost,jdbcType=VARCHAR}, #{attr1,jdbcType=VARCHAR}, 
+      #{attr2,jdbcType=VARCHAR}, #{attr3,jdbcType=VARCHAR}, #{attr4,jdbcType=VARCHAR}, 
+      #{attr5,jdbcType=VARCHAR}, #{attr6,jdbcType=VARCHAR}, #{attr7,jdbcType=VARCHAR}, 
+      #{attr8,jdbcType=VARCHAR})
+  </insert>
+    <insert id="insertSelective" parameterType="com.epri.fx.server.entity.User">
+        insert into base_user
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="username != null">
+                username,
+            </if>
+            <if test="password != null">
+                password,
+            </if>
+            <if test="name != null">
+                name,
+            </if>
+            <if test="birthday != null">
+                birthday,
+            </if>
+            <if test="address != null">
+                address,
+            </if>
+            <if test="mobilePhone != null">
+                mobile_phone,
+            </if>
+            <if test="telPhone != null">
+                tel_phone,
+            </if>
+            <if test="email != null">
+                email,
+            </if>
+            <if test="sex != null">
+                sex,
+            </if>
+            <if test="type != null">
+                type,
+            </if>
+            <if test="status != null">
+                status,
+            </if>
+            <if test="description != null">
+                description,
+            </if>
+            <if test="crtTime != null">
+                crt_time,
+            </if>
+            <if test="crtUser != null">
+                crt_user,
+            </if>
+            <if test="crtName != null">
+                crt_name,
+            </if>
+            <if test="crtHost != null">
+                crt_host,
+            </if>
+            <if test="updTime != null">
+                upd_time,
+            </if>
+            <if test="updUser != null">
+                upd_user,
+            </if>
+            <if test="updName != null">
+                upd_name,
+            </if>
+            <if test="updHost != null">
+                upd_host,
+            </if>
+            <if test="attr1 != null">
+                attr1,
+            </if>
+            <if test="attr2 != null">
+                attr2,
+            </if>
+            <if test="attr3 != null">
+                attr3,
+            </if>
+            <if test="attr4 != null">
+                attr4,
+            </if>
+            <if test="attr5 != null">
+                attr5,
+            </if>
+            <if test="attr6 != null">
+                attr6,
+            </if>
+            <if test="attr7 != null">
+                attr7,
+            </if>
+            <if test="attr8 != null">
+                attr8,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=INTEGER},
+            </if>
+            <if test="username != null">
+                #{username,jdbcType=VARCHAR},
+            </if>
+            <if test="password != null">
+                #{password,jdbcType=VARCHAR},
+            </if>
+            <if test="name != null">
+                #{name,jdbcType=VARCHAR},
+            </if>
+            <if test="birthday != null">
+                #{birthday,jdbcType=VARCHAR},
+            </if>
+            <if test="address != null">
+                #{address,jdbcType=VARCHAR},
+            </if>
+            <if test="mobilePhone != null">
+                #{mobilePhone,jdbcType=VARCHAR},
+            </if>
+            <if test="telPhone != null">
+                #{telPhone,jdbcType=VARCHAR},
+            </if>
+            <if test="email != null">
+                #{email,jdbcType=VARCHAR},
+            </if>
+            <if test="sex != null">
+                #{sex,jdbcType=CHAR},
+            </if>
+            <if test="type != null">
+                #{type,jdbcType=CHAR},
+            </if>
+            <if test="status != null">
+                #{status,jdbcType=CHAR},
+            </if>
+            <if test="description != null">
+                #{description,jdbcType=VARCHAR},
+            </if>
+            <if test="crtTime != null">
+                #{crtTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="crtUser != null">
+                #{crtUser,jdbcType=VARCHAR},
+            </if>
+            <if test="crtName != null">
+                #{crtName,jdbcType=VARCHAR},
+            </if>
+            <if test="crtHost != null">
+                #{crtHost,jdbcType=VARCHAR},
+            </if>
+            <if test="updTime != null">
+                #{updTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updUser != null">
+                #{updUser,jdbcType=VARCHAR},
+            </if>
+            <if test="updName != null">
+                #{updName,jdbcType=VARCHAR},
+            </if>
+            <if test="updHost != null">
+                #{updHost,jdbcType=VARCHAR},
+            </if>
+            <if test="attr1 != null">
+                #{attr1,jdbcType=VARCHAR},
+            </if>
+            <if test="attr2 != null">
+                #{attr2,jdbcType=VARCHAR},
+            </if>
+            <if test="attr3 != null">
+                #{attr3,jdbcType=VARCHAR},
+            </if>
+            <if test="attr4 != null">
+                #{attr4,jdbcType=VARCHAR},
+            </if>
+            <if test="attr5 != null">
+                #{attr5,jdbcType=VARCHAR},
+            </if>
+            <if test="attr6 != null">
+                #{attr6,jdbcType=VARCHAR},
+            </if>
+            <if test="attr7 != null">
+                #{attr7,jdbcType=VARCHAR},
+            </if>
+            <if test="attr8 != null">
+                #{attr8,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.epri.fx.server.entity.User">
+        update base_user
+        <set>
+            <if test="username != null">
+                username = #{username,jdbcType=VARCHAR},
+            </if>
+            <if test="password != null">
+                password = #{password,jdbcType=VARCHAR},
+            </if>
+            <if test="name != null">
+                name = #{name,jdbcType=VARCHAR},
+            </if>
+            <if test="birthday != null">
+                birthday = #{birthday,jdbcType=VARCHAR},
+            </if>
+            <if test="address != null">
+                address = #{address,jdbcType=VARCHAR},
+            </if>
+            <if test="mobilePhone != null">
+                mobile_phone = #{mobilePhone,jdbcType=VARCHAR},
+            </if>
+            <if test="telPhone != null">
+                tel_phone = #{telPhone,jdbcType=VARCHAR},
+            </if>
+            <if test="email != null">
+                email = #{email,jdbcType=VARCHAR},
+            </if>
+            <if test="sex != null">
+                sex = #{sex,jdbcType=CHAR},
+            </if>
+            <if test="type != null">
+                type = #{type,jdbcType=CHAR},
+            </if>
+            <if test="status != null">
+                status = #{status,jdbcType=CHAR},
+            </if>
+            <if test="description != null">
+                description = #{description,jdbcType=VARCHAR},
+            </if>
+            <if test="crtTime != null">
+                crt_time = #{crtTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="crtUser != null">
+                crt_user = #{crtUser,jdbcType=VARCHAR},
+            </if>
+            <if test="crtName != null">
+                crt_name = #{crtName,jdbcType=VARCHAR},
+            </if>
+            <if test="crtHost != null">
+                crt_host = #{crtHost,jdbcType=VARCHAR},
+            </if>
+            <if test="updTime != null">
+                upd_time = #{updTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updUser != null">
+                upd_user = #{updUser,jdbcType=VARCHAR},
+            </if>
+            <if test="updName != null">
+                upd_name = #{updName,jdbcType=VARCHAR},
+            </if>
+            <if test="updHost != null">
+                upd_host = #{updHost,jdbcType=VARCHAR},
+            </if>
+            <if test="attr1 != null">
+                attr1 = #{attr1,jdbcType=VARCHAR},
+            </if>
+            <if test="attr2 != null">
+                attr2 = #{attr2,jdbcType=VARCHAR},
+            </if>
+            <if test="attr3 != null">
+                attr3 = #{attr3,jdbcType=VARCHAR},
+            </if>
+            <if test="attr4 != null">
+                attr4 = #{attr4,jdbcType=VARCHAR},
+            </if>
+            <if test="attr5 != null">
+                attr5 = #{attr5,jdbcType=VARCHAR},
+            </if>
+            <if test="attr6 != null">
+                attr6 = #{attr6,jdbcType=VARCHAR},
+            </if>
+            <if test="attr7 != null">
+                attr7 = #{attr7,jdbcType=VARCHAR},
+            </if>
+            <if test="attr8 != null">
+                attr8 = #{attr8,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.epri.fx.server.entity.User">
+    update base_user
+    set username = #{username,jdbcType=VARCHAR},
+      password = #{password,jdbcType=VARCHAR},
+      name = #{name,jdbcType=VARCHAR},
+      birthday = #{birthday,jdbcType=VARCHAR},
+      address = #{address,jdbcType=VARCHAR},
+      mobile_phone = #{mobilePhone,jdbcType=VARCHAR},
+      tel_phone = #{telPhone,jdbcType=VARCHAR},
+      email = #{email,jdbcType=VARCHAR},
+      sex = #{sex,jdbcType=CHAR},
+      type = #{type,jdbcType=CHAR},
+      status = #{status,jdbcType=CHAR},
+      description = #{description,jdbcType=VARCHAR},
+      crt_time = #{crtTime,jdbcType=TIMESTAMP},
+      crt_user = #{crtUser,jdbcType=VARCHAR},
+      crt_name = #{crtName,jdbcType=VARCHAR},
+      crt_host = #{crtHost,jdbcType=VARCHAR},
+      upd_time = #{updTime,jdbcType=TIMESTAMP},
+      upd_user = #{updUser,jdbcType=VARCHAR},
+      upd_name = #{updName,jdbcType=VARCHAR},
+      upd_host = #{updHost,jdbcType=VARCHAR},
+      attr1 = #{attr1,jdbcType=VARCHAR},
+      attr2 = #{attr2,jdbcType=VARCHAR},
+      attr3 = #{attr3,jdbcType=VARCHAR},
+      attr4 = #{attr4,jdbcType=VARCHAR},
+      attr5 = #{attr5,jdbcType=VARCHAR},
+      attr6 = #{attr6,jdbcType=VARCHAR},
+      attr7 = #{attr7,jdbcType=VARCHAR},
+      attr8 = #{attr8,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+    <select id="selectAll" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from base_user
+
+    </select>
+    <select id="selectPage" parameterType="java.lang.String" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from base_user
+        <where>
+            <if test="keyId != null">
+                and username like #{keyId,jdbcType=VARCHAR} or name like #{keyId,jdbcType=VARCHAR}
+            </if>
+        </where>
+
+    </select>
+    <select id="selectMemberByGroupId" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+      select u.* from base_user u left join base_group_member gm on gm.user_id = u.id where gm.group_id = #{groupId,jdbcType=INTEGER}
+
+    </select>
+    <select id="selectLeaderByGroupId" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        select u.* from base_user u left join base_group_leader gm on gm.user_id = u.id where gm.group_id = #{groupId,jdbcType=INTEGER}
+
+    </select>
+
+    <select id="selectOne" parameterType="java.lang.String" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from base_user
+        where username = #{username,jdbcType=INTEGER}
+    </select>
+</mapper>

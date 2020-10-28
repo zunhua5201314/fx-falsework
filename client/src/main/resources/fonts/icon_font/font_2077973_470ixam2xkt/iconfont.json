@@ -1,0 +1,100 @@
+{
+  "id": "2077973",
+  "name": "icon-font",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "17288958",
+      "name": "home-outline",
+      "font_class": "home-outline",
+      "unicode": "e9b0",
+      "unicode_decimal": 59824
+    },
+    {
+      "icon_id": "11488047",
+      "name": "history",
+      "font_class": "history",
+      "unicode": "e752",
+      "unicode_decimal": 59218
+    },
+    {
+      "icon_id": "17287306",
+      "name": "exit-outline",
+      "font_class": "exit-outline",
+      "unicode": "e9ac",
+      "unicode_decimal": 59820
+    },
+    {
+      "icon_id": "17287307",
+      "name": "create-outline",
+      "font_class": "create-outline",
+      "unicode": "e9ad",
+      "unicode_decimal": 59821
+    },
+    {
+      "icon_id": "17287308",
+      "name": "power-outline",
+      "font_class": "power-outline",
+      "unicode": "e9ae",
+      "unicode_decimal": 59822
+    },
+    {
+      "icon_id": "17287309",
+      "name": "add-circle-outline",
+      "font_class": "add-circle-outline",
+      "unicode": "e9af",
+      "unicode_decimal": 59823
+    },
+    {
+      "icon_id": "774447",
+      "name": "操作日志",
+      "font_class": "caozuorizhi",
+      "unicode": "e65f",
+      "unicode_decimal": 58975
+    },
+    {
+      "icon_id": "7133436",
+      "name": "菜单管理",
+      "font_class": "jiaoyixulie",
+      "unicode": "e6a4",
+      "unicode_decimal": 59044
+    },
+    {
+      "icon_id": "8605742",
+      "name": "角色类型",
+      "font_class": "jiaoseleixing",
+      "unicode": "e666",
+      "unicode_decimal": 58982
+    },
+    {
+      "icon_id": "11121526",
+      "name": "功能角色权限管理",
+      "font_class": "gongnengjiaosequanxianguanli",
+      "unicode": "e642",
+      "unicode_decimal": 58946
+    },
+    {
+      "icon_id": "12753449",
+      "name": "用户管理",
+      "font_class": "yonghuguanli_huaban",
+      "unicode": "e62d",
+      "unicode_decimal": 58925
+    },
+    {
+      "icon_id": "12820167",
+      "name": "基础配置",
+      "font_class": "jichupeizhi",
+      "unicode": "e62e",
+      "unicode_decimal": 58926
+    },
+    {
+      "icon_id": "17287082",
+      "name": "trash-outline",
+      "font_class": "trash-outline",
+      "unicode": "ea8d",
+      "unicode_decimal": 60045
+    }
+  ]
+}

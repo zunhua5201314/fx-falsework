@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDialog?>
+<?import com.jfoenix.controls.JFXDialogLayout?>
+<?import com.jfoenix.controls.JFXProgressBar?>
+<?import com.jfoenix.controls.JFXSpinner?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.TreeView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<StackPane fx:id="rootPane" prefHeight="547.0" prefWidth="771.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <SplitPane dividerPositions="0.3" prefHeight="559.0" prefWidth="868.0">
+            <items>
+                <VBox maxWidth="280.0" prefWidth="240.0" spacing="7.0" styleClass="card-pane">
+                    <children>
+                        <HBox alignment="CENTER" prefHeight="29.0" prefWidth="205.0">
+                            <children>
+                                <ToggleButton fx:id="addButton" styleClass="left-pill" text="添加" />
+                                <ToggleButton fx:id="editButton" styleClass="center-pill" text="编辑" />
+                                <ToggleButton fx:id="deleteButton" styleClass="right-pill" text="删除" />
+                            </children>
+                     <padding>
+                        <Insets bottom="7.0" top="7.0" />
+                     </padding>
+                        </HBox>
+                        <StackPane VBox.vgrow="ALWAYS">
+                            <children>
+                                <VBox fx:id="treePane" spacing="7.0">
+                                    <children>
+                                        <JFXTextField fx:id="treeSearchTextField" promptText="输入关键字进行过滤" />
+                                        <TreeView fx:id="treeView" VBox.vgrow="ALWAYS" />
+                                    </children>
+                                </VBox>
+                                <JFXSpinner fx:id="treeViewSpinner" radius="13" startingAngle="0" styleClass="blue-spinner" visible="false" />
+                            </children>
+                        </StackPane>
+                    </children>
+                </VBox>
+                <VBox styleClass="card-pane">
+                    <children>
+                        <VBox fx:id="infoPane" prefHeight="295.0" prefWidth="534.0" spacing="7.0">
+                            <children>
+                                <Label maxHeight="30.0" prefHeight="30.0" styleClass="title-label" text="菜单信息" />
+                                <GridPane fx:id="gridPane" alignment="CENTER" hgap="30.0" prefHeight="181.0" prefWidth="351.0" vgap="20.0" VBox.vgrow="ALWAYS">
+                                    <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                        <RowConstraints />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    </rowConstraints>
+
+                                    <children>
+                                        <JFXTextField fx:id="codeTextField" labelFloat="true" promptText="路径编码" GridPane.rowIndex="1" />
+                                        <JFXTextField fx:id="orderNumTextField" labelFloat="true" promptText="排序" GridPane.rowIndex="4" />
+                                        <JFXTextField fx:id="titleTextField" labelFloat="true" promptText="标题" GridPane.rowIndex="2" />
+                                        <JFXTextField fx:id="parentIdTextField" labelFloat="true" promptText="父级节点" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                        <JFXTextField fx:id="iconTextField" labelFloat="true" promptText="图标" GridPane.rowIndex="3" />
+                                        <JFXTextArea fx:id="descriptionTextAre" labelFloat="true" promptText="描述" GridPane.columnIndex="1" GridPane.rowIndex="2" GridPane.rowSpan="3">
+                                            <GridPane.margin>
+                                                <Insets top="10.0" />
+                                            </GridPane.margin>
+                                        </JFXTextArea>
+                                        <JFXTextField fx:id="hrefTextFeild" labelFloat="true" promptText="资源路径" GridPane.columnSpan="2" GridPane.rowIndex="5" />
+                                    </children>
+
+                                </GridPane>
+                                <ButtonBar fx:id="buttonBar">
+                                    <buttons>
+                                        <JFXButton fx:id="updateButton" buttonType="RAISED" text="更新" />
+                                        <JFXButton fx:id="saveButton" buttonType="RAISED" text="保存" />
+                                        <JFXButton fx:id="cancelButton" buttonType="RAISED" text="取消" />
+                                    </buttons>
+                                    <VBox.margin>
+                                        <Insets top="10.0" />
+                                    </VBox.margin>
+                                </ButtonBar>
+                            </children>
+                        </VBox>
+                        <VBox fx:id="elementPane" prefHeight="200.0" prefWidth="100.0" spacing="7.0" VBox.vgrow="ALWAYS">
+                            <children>
+                                <VBox alignment="CENTER_LEFT" spacing="7.0">
+                                    <children>
+                                        <Label styleClass="title-label" text="按钮或资源" />
+                              <HBox alignment="CENTER_RIGHT" spacing="10.0">
+                                 <children>
+                                                <JFXTextField fx:id="elementfilterField" prefHeight="27.0" prefWidth="216.0" promptText="请输入名称\类型\请求类型搜索" />
+                                                <JFXButton fx:id="addElement" buttonType="RAISED" text="添加" />
+                                 </children>
+                              </HBox>
+                                    </children>
+                                </VBox>
+                                <TableView fx:id="tableView" tableMenuButtonVisible="true" VBox.vgrow="ALWAYS">
+
+                                    <columns>
+                                        <TableColumn fx:id="serialNumberColumn" maxWidth="45.0" minWidth="45.0" prefWidth="45.0" text="序号" />
+                                        <TableColumn fx:id="codeColumn" prefWidth="90.0" text="资源编码" />
+                                        <TableColumn fx:id="typeColumn" prefWidth="75.0" text="资源类型" />
+                                        <TableColumn fx:id="nameColumn" prefWidth="75.0" text="资源名称" />
+                                        <TableColumn fx:id="addressColumn" prefWidth="75.0" text="资源地址" />
+                                        <TableColumn fx:id="requestTypeColumn" prefWidth="75.0" text="资源请求类型" />
+                                        <TableColumn fx:id="descriptionColumn" prefWidth="75.0" text="描述" />
+                                        <TableColumn fx:id="operateColumn" maxWidth="120.0" minWidth="120.0" prefWidth="120.0" text="操作" />
+                                    </columns>
+                                    <columnResizePolicy>
+                                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                    </columnResizePolicy>
+                                </TableView>
+                            </children>
+                        </VBox>
+                    </children>
+                </VBox>
+            </items>
+        </SplitPane>
+        <JFXDialog fx:id="dialog" overlayClose="false">
+            <JFXDialogLayout>
+                <heading>
+                    <Label>JFoenix Dialog</Label>
+                </heading>
+                <body>
+                    <fx:include source="components/menu_detailed.fxml" />
+                </body>
+                <actions>
+                    <JFXProgressBar fx:id="elementProgressBar" managed="false" maxWidth="1.7976931348623157E308" prefWidth="320" visible="false">
+                    </JFXProgressBar>
+                    <JFXButton fx:id="updateElementButton" buttonType="RAISED" text="更新" />
+                    <JFXButton fx:id="saveElementButton" buttonType="RAISED" text="保存" />
+                    <JFXButton fx:id="cancelElementButton" buttonType="RAISED" text="取消" />
+                </actions>
+            </JFXDialogLayout>
+        </JFXDialog>
+    </children>
+    <opaqueInsets>
+        <Insets />
+    </opaqueInsets>
+</StackPane>

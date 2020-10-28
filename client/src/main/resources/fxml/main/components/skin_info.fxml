@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXColorPicker?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import com.jfoenix.controls.JFXSlider?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox fx:id="userInfoPane" alignment="TOP_CENTER" prefHeight="647.0" prefWidth="469.0" spacing="10.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+    <padding>
+        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+    </padding>
+    <children>
+        <TitledPane text="透明度">
+            <content>
+                <VBox alignment="CENTER" prefHeight="169.0" prefWidth="423.0">
+                    <children>
+                        <GridPane>
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                            </rowConstraints>
+                            <children>
+                                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                    <children>
+                                        <Label text="背景:" />
+                                        <JFXSlider HBox.hgrow="ALWAYS" />
+                                    </children>
+                                </HBox>
+                                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="1">
+                                    <children>
+                                        <Label text="模糊:" />
+                                        <JFXSlider HBox.hgrow="ALWAYS" />
+                                    </children>
+                                </HBox>
+                            </children>
+                        </GridPane>
+                    </children>
+                </VBox>
+            </content>
+        </TitledPane>
+        <TitledPane text="背景">
+            <content>
+                <HBox prefHeight="143.0" prefWidth="447.0" spacing="10.0">
+                    <children>
+                        <VBox prefHeight="138.0" prefWidth="100.0" spacing="10.0">
+                            <children>
+                                <Label text="纯色" />
+                                <JFXColorPicker VBox.vgrow="ALWAYS" />
+                            </children>
+                        </VBox>
+                        <VBox spacing="10.0" HBox.hgrow="ALWAYS">
+                            <children>
+                                <Label text="图片" />
+                                <AnchorPane>
+                                    <children>
+                                        <ImageView fitHeight="150.0" fitWidth="292.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                        <JFXButton contentDisplay="GRAPHIC_ONLY" style="-fx-background-color: TRANSPARENT;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                            <graphic>
+                                                <FontAwesomeIconView glyphName="PLUS" size="40" />
+                                            </graphic>
+                                        </JFXButton>
+                                    </children>
+                                </AnchorPane>
+                            </children>
+                        </VBox>
+                    </children>
+                </HBox>
+            </content>
+        </TitledPane>
+        <TitledPane prefHeight="215.0" prefWidth="425.0" text="主题" VBox.vgrow="ALWAYS">
+            <content>
+                <HBox>
+                    <children>
+                        <JFXListView orientation="HORIZONTAL" prefHeight="80.0" HBox.hgrow="ALWAYS">
+                            <VBox>
+                                <Label text="默认" />
+                                <ImageView fitHeight="118.0" fitWidth="180.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+
+                            </VBox>
+                            <VBox maxHeight="135.0" prefHeight="135.0" prefWidth="194.0">
+                                <Label text="暗色" />
+                                <ImageView fitHeight="109.0" fitWidth="171.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+
+                            </VBox>
+
+                        </JFXListView>
+                    </children>
+                </HBox>
+            </content>
+        </TitledPane>
+    </children>
+
+
+</VBox>

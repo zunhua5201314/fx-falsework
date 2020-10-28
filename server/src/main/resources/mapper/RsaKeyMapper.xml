@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.epri.fx.server.mapper.RsaKeyMapper">
+  <resultMap id="BaseResultMap" type="com.epri.fx.server.entity.RsaKey">
+    <id column="KEY" jdbcType="VARCHAR" property="key" />
+    <result column="VALUE" jdbcType="VARCHAR" property="value" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    KEY, VALUE
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from rsa_key
+    where KEY = #{key,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from rsa_key
+    where KEY = #{key,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.epri.fx.server.entity.RsaKey">
+    insert into rsa_key (KEY, VALUE)
+    values (#{key,jdbcType=VARCHAR}, #{value,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.epri.fx.server.entity.RsaKey">
+    insert into rsa_key
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="key != null">
+        KEY,
+      </if>
+      <if test="value != null">
+        VALUE,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="key != null">
+        #{key,jdbcType=VARCHAR},
+      </if>
+      <if test="value != null">
+        #{value,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.epri.fx.server.entity.RsaKey">
+    update rsa_key
+    <set>
+      <if test="value != null">
+        VALUE = #{value,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where KEY = #{key,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.epri.fx.server.entity.RsaKey">
+    update rsa_key
+    set VALUE = #{value,jdbcType=VARCHAR}
+    where KEY = #{key,jdbcType=VARCHAR}
+  </update>
+</mapper>

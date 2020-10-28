@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.validation.RequiredFieldValidator?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+<StackPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="420.0" prefWidth="450.0" spacing="10.0" styleClass="card-pane" StackPane.alignment="CENTER">
+            <StackPane.margin>
+                <Insets />
+            </StackPane.margin>
+            <padding>
+                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+            </padding>
+            <children>
+                <Label fx:id="title" styleClass="title-label" text="编辑" />
+                <GridPane alignment="CENTER" nodeOrientation="LEFT_TO_RIGHT" vgap="30.0">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                    <children>
+                        <JFXTextField fx:id="nameTextField" labelFloat="true" promptText="*姓名">
+                            <validators>
+                                <RequiredFieldValidator message="Input Required!">
+                                    <FontIcon iconLiteral="fas-exclamation-triangle" />
+                                </RequiredFieldValidator>
+                            </validators>
+                            <GridPane.margin>
+                                <Insets />
+                            </GridPane.margin>
+                        </JFXTextField>
+                        <JFXTextField fx:id="userNameTextField" labelFloat="true" promptText="*帐户" GridPane.rowIndex="1">
+                            <validators>
+                                <RequiredFieldValidator message="Input Required!">
+                                    <FontIcon iconLiteral="fas-exclamation-triangle" />
+                                </RequiredFieldValidator>
+                            </validators>
+                        </JFXTextField>
+                        <JFXPasswordField fx:id="pwdTextField" labelFloat="true" promptText="*密码" GridPane.rowIndex="2">
+                            <validators>
+                                <RequiredFieldValidator message="Input Required!">
+                                    <FontIcon iconLiteral="fas-exclamation-triangle" />
+                                </RequiredFieldValidator>
+                            </validators>
+                        </JFXPasswordField>
+                        <JFXTextArea fx:id="descTextArea" labelFloat="true" promptText="描述" GridPane.columnSpan="2" GridPane.rowIndex="4" GridPane.rowSpan="2" />
+                        <JFXComboBox fx:id="genderCombobox" labelFloat="true" maxWidth="1.7976931348623157E308" promptText="性别" GridPane.rowIndex="3">
+
+                            <items>
+                                <FXCollections fx:factory="observableArrayList">
+                                    <Label>男</Label>
+                                    <Label>女</Label>
+                                </FXCollections>
+                            </items>
+                        </JFXComboBox>
+                        <ButtonBar prefHeight="40.0" prefWidth="200.0" GridPane.columnSpan="2" GridPane.rowIndex="6">
+                            <buttons>
+                                <JFXButton  fx:id="cancelBut" text="取消" />
+                                <JFXButton  fx:id="saveBut" text="保存" />
+                                <JFXButton  fx:id="updateBut" text="更新" />
+                            </buttons>
+                        </ButtonBar>
+                    </children>
+                    <padding>
+                        <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                    </padding>
+                </GridPane>
+            </children>
+            <effect>
+                <DropShadow blurType="GAUSSIAN" height="73.0" radius="36.0" width="73.0" />
+            </effect>
+        </VBox>
+    </children>
+</StackPane>

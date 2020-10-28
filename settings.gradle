@@ -1,0 +1,5 @@
+rootProject.name = 'fx-falsework'
+include 'client'
+include 'server'
+
+
