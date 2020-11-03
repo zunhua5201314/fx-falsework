@@ -32,6 +32,7 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
 import javafx.scene.Node;
+import javafx.scene.control.ContentDisplay;
 import javafx.scene.control.Label;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
@@ -127,6 +128,7 @@ public class MainController {
 
     @PostConstruct
     public void init() throws FlowException {
+
         userLabel.textProperty().bind(ApplicatonStore.nameProperty());
         roleLabel.textProperty().bind(ApplicatonStore.getRoles().asString());
         userButton.textProperty().bind(ApplicatonStore.nameProperty());
